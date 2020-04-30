@@ -23,5 +23,13 @@ class Blogger < ApplicationRecord
             sum + likes_num
         end
     end
+
+    def most_popular_destinations
+        post_count = self.destinations.sort_by do |dest| 
+            dest.posts.count
+        end 
+
+        post_count.reverse.first(5)
+    end 
     
 end

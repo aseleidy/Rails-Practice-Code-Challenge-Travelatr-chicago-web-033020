@@ -6,5 +6,12 @@
 
 <p>Featured post 🚀: <%= link_to @blogger.featured_post.title %></p>
 <p>Total likes 👍: <%= @blogger.total_likes %></p>
-
+<p>Most popular destinations:</p>
+<ul>
+  <% @blogger.most_popular_destinations.each do |dest| %>
+  <li>
+    <%= link_to dest.name, destination_path(dest) %></p>
+  </li>
+  <% end %>
+</ul>
 <h3><%= link_to "Back to all bloggers", bloggers_path %></h3>
