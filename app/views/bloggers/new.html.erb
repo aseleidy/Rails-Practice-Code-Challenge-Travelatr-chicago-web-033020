@@ -1,0 +1,24 @@
+<% if @blogger.errors.any? %>
+    <p style="color: red">Invalid!</p>
+    <% @blogger.errors.full_messages.each do |message| %>
+        <p style="color: red"><%= message %></p>
+    <% end %>
+<% end %>
+
+<h1>Blogger Form</h1>
+
+<%= form_for @blogger do |f| %>
+    <%= f.label :name, "Blogger name:" %>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.label :age, "Blogger age:" %>
+    <%= f.text_field :age %>
+    <br>
+    <br>
+    <%= f.label :bio, "Blogger bio:" %>
+    <%= f.text_area :bio %>
+    <br>
+    <br>
+    <%= f.submit %>
+<% end %>

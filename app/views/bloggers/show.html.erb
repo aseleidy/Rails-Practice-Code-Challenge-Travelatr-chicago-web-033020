@@ -1,0 +1,10 @@
+<h1>Blogger Details:</h1>
+
+<p>Full name: <%= @blogger.name %></p>
+<p>Age: <%= @blogger.age %> years old</p>
+<p>Bio: <%= @blogger.bio %></p>
+
+<p>Featured post 🚀: <%= link_to @blogger.featured_post.title %></p>
+<p>Total likes 👍: <%= @blogger.total_likes %></p>
+
+<h3><%= link_to "Back to all bloggers", bloggers_path %></h3>

@@ -1,0 +1,15 @@
+<h1>Destination details:</h1>
+
+<p>Name: <%= @destination.name %></p>
+<p>Country: <%= @destination.country %></p>
+
+<p>Average age of bloggers: <%= @destination.average_age %></p>
+
+<p>Most recent posts:</p>
+<ul>
+    <% @destination.most_recent.each do |post| %>
+    <li>
+        <p><%= link_to post.title %></p>
+    </li>
+    <% end %>
+</ul>
